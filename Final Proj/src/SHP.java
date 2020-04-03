@@ -19,6 +19,10 @@ public class SHP {
 
     permutate(G.getBars(), G.V());
 
+    ArrayList<Bar> shortest = findShortest();
+    for(int i = 0; i < shortest.size() - 1; i ++)
+        G.addEdge(shortest.get(i), shortest.get(i +1), distTo(shortest.get(i), shortest.get(i+1)));
+
 
     }
 

@@ -22,6 +22,7 @@ public class main {
         G.addVertex(new Bar ("a",0,0));
         G.addVertex(new Bar ("b",0,0));
         G.addVertex(new Bar ("c",0,0));
+
         SHP hampath = new SHP(G, G.getBars().get(0));
 
     }
