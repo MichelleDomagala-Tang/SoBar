@@ -1,8 +1,6 @@
 package src;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 //shortest hamiltonian path
 public class SHP {
@@ -17,38 +15,33 @@ public class SHP {
         for(Bar b : G.getBars())
             marked.putIfAbsent(b, false);
 
-    paths = new ArrayList<ArrayList<Bar>>();
+    paths = new ArrayList<>();
+
     permutate(G.getBars(), G.V());
 
-
-    for(ArrayList<Bar> bars : paths){
-        for(Bar b : bars){
-            System.out.print(b.name());
-        }
-        System.out.println();
-    }
 
     }
 
     //https://www.geeksforgeeks.org/heaps-algorithm-for-generating-permutations/
     public void permutate(ArrayList<Bar> a, int size){
 
-        if (size == 1)
-            paths.add(a);
+        if (size == 1){
+            ArrayList<Bar> temp = new ArrayList<>();
+            for(Bar b : a)
+                temp.add(b);
+            paths.add(temp);
+        }
+
 
         for(int i = 0; i < size; i++){
+
             permutate(a,size-1);
 
             if(size % 2 == 1){
-                Bar temp = a.get(0);
-                a.set(0,a.get(size-1));
-                a.set(size-1, temp);
+                Collections.swap(a,0 ,size - 1);
 
             } else {
-                Bar temp = a.get(i);
-                a.set(i,a.get(size-1));
-                a.set(size-1, temp);
-                
+                Collections.swap(a,i ,size - 1);
             }
         }
 
