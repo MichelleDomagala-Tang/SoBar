@@ -59,5 +59,25 @@ public class SHP {
         return false;
     }
 
+    public double distTo(Bar a, Bar b){
+        return 0.0;
+    }
+
+    public ArrayList<Bar> findShortest(){
+
+        ArrayList<Bar> shortest = paths.get(0);
+        double bestDist = Double.POSITIVE_INFINITY;
+        for(ArrayList<Bar> bars : paths){
+            double total = 0.0;
+            for(int i = 0; i < bars.size() - 1; i ++)
+                total += distTo(bars.get(i), bars.get(i+ 1));
+            if (total < bestDist){
+                shortest = bars;
+                bestDist = total;
+            }
+        }
+
+        return shortest;
+    }
 
 }
