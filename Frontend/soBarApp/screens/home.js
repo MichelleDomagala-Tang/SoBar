@@ -1,12 +1,24 @@
-import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { globalStyles } from '../styles/global';
-import homeStack from '../routes/homeStack';
 
-export default function Home() {
-    return (
-        <View styles={globalStyles.container}>
-            <Text style={globalStyles.titleText}>Home Screen</Text>
-        </View>
-    )
+import React from 'react';
+import { Button, View, Text } from 'react-native';
+
+class Home extends React.Component {
+    static navigationOptions = {
+        title: 'Home'
+    };
+
+    render() {
+        return (
+            <View style={{
+                flex: 1,
+                alignItems: 'center',
+                justifyContent: 'center'
+            }}>
+                <Button title="Go to Map screen"
+                    onPress={() => this.props.navigation.navigate('Map')}
+                />
+            </View>
+        );
+    }
 }
+export default Home;
