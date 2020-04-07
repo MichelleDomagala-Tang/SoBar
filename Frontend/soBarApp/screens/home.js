@@ -1,24 +1,12 @@
-
 import React from 'react';
-import { Button, View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import { globalStyles } from '../styles/global';
+const HomeScreen = props => {
+    return (
+    <View style={globalStyles.container}>
+        <Text>Home Screen!</Text>
+    </View>
+    );
+};
 
-class Home extends React.Component {
-    static navigationOptions = {
-        title: 'Home'
-    };
-
-    render() {
-        return (
-            <View style={{
-                flex: 1,
-                alignItems: 'center',
-                justifyContent: 'center'
-            }}>
-                <Button title="Go to Map screen"
-                    onPress={() => this.props.navigation.navigate('Map')}
-                />
-            </View>
-        );
-    }
-}
-export default Home;
+export default HomeScreen;
