@@ -1,8 +1,9 @@
-import * as React from 'react';
+import React from 'react';
 import { View, Text, Button, useState } from 'react-native';
-import { content } from './Global';
 
 export default function App() {
+
+  let content = <Home />;
 
   return (
     <View>

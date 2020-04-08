@@ -1,4 +1,4 @@
-
+import React from 'react';
 import Home from './screens/home';
 import Map from './screens/map';
 
