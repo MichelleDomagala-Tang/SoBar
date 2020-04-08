@@ -18,7 +18,7 @@ export default function App() {
       <View style={globalStyles.header}>
         <Image source={require('./logo.png')} style={globalStyles.logo} />
       </View>
-      <View style={globalStyles.screen}>
+      <View>
         {content}
       </View>
     </View>
