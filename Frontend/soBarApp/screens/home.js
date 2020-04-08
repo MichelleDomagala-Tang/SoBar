@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import { View, Text, StyleSheet, Button, Image, Transformation } from 'react-native';
 import { globalStyles } from '../styles/global';
 
@@ -10,9 +10,11 @@ const HomeScreen = props => {
     const [modalVisible, setModalVisible] = useState(false);
 
     const selectPref = prefTitle => {
-        setpref(currentPref => [...pref, { key: Math.random().toString(), value: prefTitle }])
+        setpref(currentPref => [...pref, { key: Math.random().toString(), value: prefTitle }]);
         setModalVisible(false);
-    }
+    };
+
+    
 
     return (
         <View>
