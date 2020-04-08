@@ -3,7 +3,11 @@ import { View, Text, Button } from 'react-native';
 
 export default function App() {
 
-  let content = <Home />;
+  let content = <Home onStart={changeMap} />;
+
+  const changeMap = () => {
+    content = <Map />;
+  };
 
   return (
     <View>
