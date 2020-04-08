@@ -9,8 +9,18 @@ const HomeScreen = props => {
     const [pref, setpref] = useState([]);
     const [modalVisible, setModalVisible] = useState(false);
 
-    const selectPref = prefTitle => {
+    const addPrefHandler = prefTitle => {
         setpref(currentPref => [...pref, { key: Math.random().toString(), value: prefTitle }]);
+        setModalVisible(false);
+    };
+
+    const removePrefHandler = prefId => {
+        setpref(currentPref => {
+            return currentPref.filter((pref) => pref.id !== prefId)
+        })
+    };
+
+    const cancelPrefHandler = () => {
         setModalVisible(false);
     };
 
@@ -20,9 +30,11 @@ const HomeScreen = props => {
                 <View style={globalStyles.button}><Button title="Preferences" style={globalStyles.button} onPress={() => setModalVisible(true)} color='grey' /></View>
                 <View style={globalStyles.button}><Button title="Find Route" style={globalStyles.button} onPress={() => props.onStart} color='grey' /></View>
                 <Preferences visible={modalVisible} />
+                onAddPref={addPrefHandler}
+                onCancel={cancelPrefHandler}
             </View>
         </View>
     );
-};
+}
 
 export default HomeScreen;
