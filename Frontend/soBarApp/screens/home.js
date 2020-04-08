@@ -6,7 +6,7 @@ const HomeScreen = props => {
     <View style={globalStyles.container}>
         <Text style={globalStyles.titleText}>Home Screen!</Text>
         <View style={globalStyles.buttonContainer} >
-            <Button title="Map Screen" onPress={() => global.content = <Map />}>Open Map</Button>
+            <Button title="Map Screen" onPress={() => props.onStart}>Open Map</Button>
         </View>
     </View>
     );
