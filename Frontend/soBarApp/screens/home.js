@@ -9,6 +9,7 @@ const HomeScreen = props => {
             <Text style={globalStyles.headerTitle}>soBAR</Text>
         </View>
         <View style={globalStyles.buttonContainer} >
+            <Button title="Map" onPress={() => props.onStart}>Map Boi</Button>
             <Button title="Map Screen" onPress={() => props.onStart}>Open Map</Button>
         </View>
     </View>

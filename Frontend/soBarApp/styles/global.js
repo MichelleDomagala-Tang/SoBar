@@ -14,8 +14,9 @@ export const globalStyles = StyleSheet.create({
         fontSize: 20
     },
     buttonContainer: {
-        padding: 40
-    },
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+      },
     titleText: {
         padding: 20,
         fontSize: 18,
