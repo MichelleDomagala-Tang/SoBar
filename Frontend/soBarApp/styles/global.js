@@ -6,6 +6,7 @@ export const globalStyles = StyleSheet.create({
         backgroundColor: "green"
     },
     titleText: {
+        padding: 20,
         fontSize: 18,
         color: 'red'
     },
