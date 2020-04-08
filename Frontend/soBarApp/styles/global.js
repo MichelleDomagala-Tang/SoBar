@@ -16,7 +16,7 @@ export const globalStyles = StyleSheet.create({
         width: '50%',
         height: 60,
         resizeMode: 'contain',
-        borderRadius: 100
+        borderRadius: 150
     },
     buttonContainer: {
         flexDirection: 'row',

@@ -29,7 +29,7 @@ const preferences = props => {
                 />
                 <View style={globalStyles.cancel}><Button title="X" color="red" onPress={cancelGoalHandler} /></View>
                 <View style={globalStyles.buttonContainer} >
-                    <View style={globalStyles.button}><Button title="ADD" color="grey" onPress={prefInputHandler} /></View>
+                    <View style={globalStyles.button}><Button title="CONFIRM" color="grey" onPress={prefInputHandler} /></View>
                 </View>
             </View>
         </Modal>
