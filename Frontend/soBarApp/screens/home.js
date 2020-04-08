@@ -1,14 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button, Image } from 'react-native';
+import { View, Text, StyleSheet, Button, Image, Transformation } from 'react-native';
 import { globalStyles } from '../styles/global';
 
 const HomeScreen = props => {
     return (
     <View>
         <View style={globalStyles.header}>
-            <View style={globalStyles.logo}>
-                <Image source={require('../logo.png')} />
-            </View>
+            <Image source={require('../logo.png')} style={globalStyles.logo} />
         </View>
     </View>
     );
