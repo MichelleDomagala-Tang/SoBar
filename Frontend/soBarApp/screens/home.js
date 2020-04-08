@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, Button, Image, Transformation } from 'react-native';
 import { globalStyles } from '../styles/global';
 
@@ -17,12 +17,8 @@ const HomeScreen = props => {
     return (
         <View>
             <View style={globalStyles.buttonContainer} >
-                <Button title="Map" onPress={() => props.onStart} color='grey' />
-                <Button title="Map Screen" onPress={() => props.onStart} color='grey' />
-            </View>
-            <View style={globalStyles.buttonContainer} >
-                <Button title="Preferences Button" style={globalStyles.button} onPress={() => setModalVisible(true)}>PREFERENCES</Button>
-                <Button title="Find Route" style={globalStyles.button} onPress={() => props.onStart}>FIND ROUTE</Button>
+                <Button title="Preferences" style={globalStyles.button} onPress={() => setModalVisible(true)} color='grey' />
+                <Button title="Find Route" style={globalStyles.button} onPress={() => props.onStart} color='grey' />
                 <Preferences visible={modalVisible} />
             </View>
         </View>
