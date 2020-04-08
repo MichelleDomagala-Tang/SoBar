@@ -14,13 +14,11 @@ const HomeScreen = props => {
         setModalVisible(false);
     };
 
-    
-
     return (
         <View>
             <View style={globalStyles.buttonContainer} >
-                <Button title="Preferences" style={globalStyles.button} onPress={() => setModalVisible(true)} color='grey' />
-                <Button title="Find Route" style={globalStyles.button} onPress={() => props.onStart} color='grey' />
+                <View style={globalStyles.button}><Button title="Preferences" style={globalStyles.button} onPress={() => setModalVisible(true)} color='grey' /></View>
+                <View style={globalStyles.button}><Button title="Find Route" style={globalStyles.button} onPress={() => props.onStart} color='grey' /></View>
                 <Preferences visible={modalVisible} />
             </View>
         </View>

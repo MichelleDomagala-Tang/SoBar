@@ -22,8 +22,11 @@ export const globalStyles = StyleSheet.create({
     buttonContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        padding: 30
-      },
+        padding: 10
+    },
+    button: {
+        width: 100
+    },
     titleText: {
         padding: 20,
         fontSize: 18,
