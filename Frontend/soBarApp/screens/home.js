@@ -28,15 +28,16 @@ const HomeScreen = props => {
         <View>
             <View style={globalStyles.buttonContainer} >
                 <View style={globalStyles.button}><Button title="Preferences" style={globalStyles.button} onPress={() => setModalVisible(true)} color='grey' /></View>
-                <View style={globalStyles.button}><Button title="Find Route" style={globalStyles.button} onPress={() => props.onStart} color='grey' /></View>
-                <Preferences visible={modalVisible} />
-                onAddPref={addPrefHandler}
-                onCancel={cancelPrefHandler} />
-                <FlatList
-                keyExtractor={(item, index) => item.id}
-                data={pref}
-                />
+                <View style={globalStyles.button}><Button title="Find Route" style={globalStyles.button} onPress={() => props.onStart} color='grey' /></View>    
             </View>
+            <Preferences visible={modalVisible}
+            onAddPref={addPrefHandler}
+            onCancel={cancelPrefHandler} />
+            <FlatList
+            keyExtractor={(item, index) => item.id}
+            data={pref}
+            />
+            
         </View>
     );
 }
