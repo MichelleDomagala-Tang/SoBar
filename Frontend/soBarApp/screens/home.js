@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Button, Image, Transformation } from 'react-native';
 import { globalStyles } from '../styles/global';
 
-import Preferences from './screens/preferences'
+import Preferences from '../screens/preferences'
 
 const HomeScreen = props => {
 
