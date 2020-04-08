@@ -1,10 +1,13 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
 import { globalStyles } from '../styles/global';
 const HomeScreen = props => {
     return (
     <View style={globalStyles.container}>
-        <Text>Home Screen!</Text>
+        <Text style={globalStyles.titleText}>Home Screen!</Text>
+        <View style={globalStyles.buttonContainer} >
+            <Button title="Map Screen" onPress={() => global.content = <Map />}>Open Map</Button>
+        </View>
     </View>
     );
 };

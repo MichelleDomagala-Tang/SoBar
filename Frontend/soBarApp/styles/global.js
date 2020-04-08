@@ -1,10 +1,9 @@
 import { StyleSheet } from 'react-native';
 
 export const globalStyles = StyleSheet.create({
-    container: {
-        flex: 1,
-        padding: 20,
-        paddingTop: 40
+    buttonContainer: {
+        padding: 40,
+        backgroundColor: "green"
     },
     titleText: {
         fontFamily: 'nunito-bold',

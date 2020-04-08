@@ -1,13 +1,12 @@
 import * as React from 'react';
-import { View, Text, Button } from 'react-native';
-
-import Home from './screens/home';
-import Map from './screens/map';
+import { View, Text, Button, useState } from 'react-native';
+import { content } from './Global';
 
 export default function App() {
+
   return (
     <View>
-      <Home></Home>
+      {content}
     </View>
   )
 }
