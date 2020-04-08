@@ -1,12 +1,14 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, Button, Image } from 'react-native';
 import { globalStyles } from '../styles/global';
 
 const HomeScreen = props => {
     return (
     <View>
         <View style={globalStyles.header}>
-            <Text style={globalStyles.headerTitle}>soBAR</Text>
+            <View style={globalStyles.logo}>
+                <Image source={require('../logo.png')} />
+            </View>
         </View>
         <View style={globalStyles.buttonContainer} >
             <Button title="Map Screen" onPress={() => props.onStart}>Open Map</Button>

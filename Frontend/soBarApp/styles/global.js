@@ -9,7 +9,7 @@ export const globalStyles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
-    headerTitle: {
+    logo: {
         color: 'black',
         fontSize: 20
     },
