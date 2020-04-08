@@ -1,6 +1,9 @@
 import { StyleSheet } from 'react-native';
 
 export const globalStyles = StyleSheet.create({
+    screen: {
+        flex: 1
+    },
     header: {
         width: '100%',
         height: 90,
@@ -18,7 +21,7 @@ export const globalStyles = StyleSheet.create({
     },
     buttonContainer: {
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-around'
     },
     titleText: {
         padding: 20,

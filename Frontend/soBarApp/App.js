@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, Image } from 'react-native';
+import { globalStyles } from './styles/global';
 
 import Home from './screens/home'
 import Map from './screens/map'
@@ -14,7 +15,12 @@ export default function App() {
 
   return (
     <View>
-      {content}
+      <View style={globalStyles.header}>
+        <Image source={require('./logo.png')} style={globalStyles.logo} />
+      </View>
+      <View>
+        {content}
+      </View>
     </View>
   )
 }
