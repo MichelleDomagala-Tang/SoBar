@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { View, Text, StyleSheet, Button, Image, Transformation } from 'react-native';
+import { View, Text, StyleSheet, Button, Image, Transformation, FlatList } from 'react-native';
 import { globalStyles } from '../styles/global';
 
 import Preferences from '../screens/preferences'
@@ -38,6 +38,10 @@ const HomeScreen = props => {
                 <Preferences visible={modalVisible} 
                 onAddPref={addPrefHandler}
                 onCancel={cancelPrefHandler} />
+                <FlatList
+                keyExtractor={(item, index) => item.id}
+                data={pref}
+                />
             </View>
         </View>
     );
