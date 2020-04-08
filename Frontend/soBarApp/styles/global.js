@@ -4,19 +4,22 @@ export const globalStyles = StyleSheet.create({
     header: {
         width: '100%',
         height: 90,
-        paddingTop: 30,
-        backgroundColor: 'green',
+        padding: 30,
+        backgroundColor: '#7BD6A8',
         alignItems: 'center',
         justifyContent: 'center'
     },
     logo: {
-        color: 'black',
-        fontSize: 20
+        width: '50%',
+        height: 60,
+        resizeMode: 'contain',
+        borderRadius: 100,
+        borderColor: 'black',
     },
     buttonContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between'
-      },
+    },
     titleText: {
         padding: 20,
         fontSize: 18,
