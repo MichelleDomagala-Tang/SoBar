@@ -11,12 +11,12 @@ const preferences = props => {
 
     const addPrefHandler = () => {
         props.onAddGoal(enteredGoal);
-        setEnteredGoal('');
+        setEnteredPref('');
     };
 
     const cancelGoalHandler = () => {
         props.onCancel();
-        setEnteredGoal('');
+        setEnteredPref('');
     };
 
     return (
