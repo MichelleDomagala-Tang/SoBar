@@ -35,5 +35,10 @@ export const globalStyles = StyleSheet.create({
     paragraph: {
         marginVertical: 8,
         lineHeight: 20
+    },
+    cancel: {
+        position: 'absolute',
+        right: 0,
+        width: 35
     }
 });

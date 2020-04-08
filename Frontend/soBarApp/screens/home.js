@@ -37,7 +37,6 @@ const HomeScreen = props => {
             keyExtractor={(item, index) => item.id}
             data={pref}
             />
-            
         </View>
     );
 }

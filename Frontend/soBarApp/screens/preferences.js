@@ -27,9 +27,9 @@ const preferences = props => {
                     onChangeText={prefInputHandler}
                     value={enteredpref}
                 />
+                <View style={globalStyles.cancel}><Button title="X" color="red" onPress={cancelGoalHandler} /></View>
                 <View style={globalStyles.buttonContainer} >
-                    <View style={globalStyles.button}><Button title="ADD" onPress={prefInputHandler} /></View>
-                    <View style={globalStyles.button}><Button title="CANCEL" color="red" onPress={cancelGoalHandler} /></View>
+                    <View style={globalStyles.button}><Button title="ADD" color="grey" onPress={prefInputHandler} /></View>
                 </View>
             </View>
         </Modal>
