@@ -8,8 +8,8 @@ import Map from './screens/map'
 export default function App() {
 
   
-  const changeMap = (a) => {
-    setMapShow(a);
+  const changeMap = (bool) => {
+    setMapShow(bool);
   };
   
   const [mapShow, setMapShow] = useState(false);
@@ -17,7 +17,11 @@ export default function App() {
 
 
   if (mapShow) {
-    content = <Map />;
+    content = <Map onStart={changeMap} />;
+  };
+
+  if (!mapShow) {
+    content = <Home onStart={changeMap} />;
   };
 
   return (
