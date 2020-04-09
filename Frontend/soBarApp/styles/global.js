@@ -1,9 +1,6 @@
 import { StyleSheet } from 'react-native';
 
 export const globalStyles = StyleSheet.create({
-    screen: {
-        flex: 1
-    },
     header: {
         width: '100%',
         height: 90,
@@ -39,5 +36,21 @@ export const globalStyles = StyleSheet.create({
         position: 'absolute',
         right: 0,
         width: 35
+    },
+    mapContainer: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+    },
+    map : {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
     }
 });
