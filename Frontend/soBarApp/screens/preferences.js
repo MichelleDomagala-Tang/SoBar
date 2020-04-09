@@ -30,7 +30,7 @@ const preferences = props => {
                         <Button title="+" color='#7BD6A8' onPress={() => {}}/>
                     </View>
                     <View style={globalStyles.preference}>
-                        <Text>Live Music?</Text>
+                        <Text>Live Music?  </Text>
                         <Button title="+" color='#7BD6A8' onPress={() => {}}/>
                     </View>
                     <View style={globalStyles.preference}>
