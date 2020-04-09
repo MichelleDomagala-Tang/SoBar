@@ -8,6 +8,7 @@ import PrefItem from '../components/PrefItem'
 const HomeScreen = props => {
 
     const [pref, setpref] = useState([]);
+    const [bars, setBars] = useState([]);
     const [modalVisible, setModalVisible] = useState(false);
 
     const addPrefHandler = prefTitle => {
@@ -39,6 +40,13 @@ const HomeScreen = props => {
             <Text style={globalStyles.titleText} >Bars in the Area:</Text>
             <FlatList 
                 keyExtractor={(item, index) => item.id}
+                data={bars}
+                renderItem={itemData =>
+                    <PrefItem
+                        id={itemData.item.id}
+                        onDelete={removePrefHandler}
+                        title={itemData.item.value}
+                    />}
             />
             <Text style={globalStyles.titleText} >Preferences:</Text>
             <FlatList
