@@ -38,7 +38,7 @@ export const globalStyles = StyleSheet.create({
         width: 35
     },
     mapContainer: {
-        height: 530,
+        height: '84%',
         width: '100%'
     },
     map : {

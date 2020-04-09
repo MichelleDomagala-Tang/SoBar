@@ -26,15 +26,15 @@ const preferences = props => {
             <View style={globalStyles.inputContainer}>
                 <ScrollView>
                     <View style={globalStyles.preference}>
-                        <Text>Karaoke?  </Text>
+                        <Text>Karaoke  </Text>
                         <Button title="+" color='#7BD6A8' onPress={() => {}}/>
                     </View>
                     <View style={globalStyles.preference}>
-                        <Text>Live Music?  </Text>
+                        <Text>Live Music  </Text>
                         <Button title="+" color='#7BD6A8' onPress={() => {}}/>
                     </View>
                     <View style={globalStyles.preference}>
-                        <Text>Food Available?  </Text>
+                        <Text>Food Available  </Text>
                         <Button title="+" color='#7BD6A8' onPress={() => {}}/>
                     </View>
                 </ScrollView>
