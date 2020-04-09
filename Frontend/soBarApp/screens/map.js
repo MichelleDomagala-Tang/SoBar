@@ -56,6 +56,8 @@ const styles = StyleSheet.create({
   },
   map : {
     position: 'absolute',
+    height: 200,
+    width: 300,
     top: 0,
     left: 0,
     bottom: 0,
