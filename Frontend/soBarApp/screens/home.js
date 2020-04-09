@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, Button, Image, Transformation, FlatList } from 'react-native';
 import { globalStyles } from '../styles/global';
 
 import Preferences from '../screens/preferences'
+import PrefItem from '../components/PrefItem'
 
 const HomeScreen = props => {
 
@@ -10,14 +11,16 @@ const HomeScreen = props => {
     const [modalVisible, setModalVisible] = useState(false);
 
     const addPrefHandler = prefTitle => {
-        setpref(currentPref => [...pref, { key: Math.random().toString(), value: prefTitle }]);
+        setpref(currentPref => 
+            [...pref,
+            { id: Math.random().toString(), value: prefTitle }]);
         setModalVisible(false);
     };
 
     const removePrefHandler = prefId => {
         setpref(currentPref => {
             return currentPref.filter((pref) => pref.id !== prefId)
-        })
+        });
     };
 
     const cancelPrefHandler = () => {
@@ -28,14 +31,19 @@ const HomeScreen = props => {
         <View>
             <View style={globalStyles.buttonContainer} >
                 <View style={globalStyles.button}><Button title="Preferences" style={globalStyles.button} onPress={() => setModalVisible(true)} color='grey' /></View>
-                <View style={globalStyles.button}><Button title="Find Route" style={globalStyles.button} onPress={() => props.onStart(true)} /></View>    
+                <View style={globalStyles.button}><Button title="Find Route" style={globalStyles.button} onPress={() => props.onStart(true)} /></View>
             </View>
             <Preferences visible={modalVisible}
-            onAddPref={addPrefHandler}
-            onCancel={cancelPrefHandler} />
+                onAddPref={addPrefHandler}
+                onCancel={cancelPrefHandler} />
             <FlatList
-            keyExtractor={(item, index) => item.id}
-            data={pref}
+                keyExtractor={(item, index) => item.id}
+                data={pref}
+                renderItem={itemData =>
+                    <PrefItem
+                        id={itemData.item.id}
+                        onDelete={removePrefHandler}
+                        title={itemData.item.value} />}
             />
         </View>
     );

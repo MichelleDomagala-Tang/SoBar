@@ -52,5 +52,11 @@ export const globalStyles = StyleSheet.create({
         left: 0,
         bottom: 0,
         right: 0,
-    }
+    },
+    inputContainer: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
 });

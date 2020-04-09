@@ -10,7 +10,7 @@ const preferences = props => {
     };
 
     const addPrefHandler = () => {
-        props.onAddGoal(enteredGoal);
+        props.onAddPref(enteredpref);
         setEnteredPref('');
     };
 
@@ -21,7 +21,7 @@ const preferences = props => {
 
     return (
         <Modal visible={props.visible} animationType="slide" >
-            <View>
+            <View style={globalStyles.inputContainer}>
                 <TextInput 
                     placeholder="Preference"
                     onChangeText={prefInputHandler}
@@ -29,7 +29,7 @@ const preferences = props => {
                 />
                 <View style={globalStyles.cancel}><Button title="X" color="red" onPress={cancelGoalHandler} /></View>
                 <View style={globalStyles.buttonContainer} >
-                    <View style={globalStyles.button}><Button title="CONFIRM" color="grey" onPress={prefInputHandler} /></View>
+                    <View style={globalStyles.button}><Button title="CONFIRM" color="grey" onPress={addPrefHandler} /></View>
                 </View>
             </View>
         </Modal>
