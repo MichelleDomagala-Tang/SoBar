@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Platform, StyleSheet, Text, View, Button } from 'react-native';
 import MapView from 'react-native-maps';
 import { globalStyles } from '../styles/global';
+import MapViewDirections from 'react-native-maps-directions';
 
 const instructions = Platform.select({
   ios: `Press Cmd+R to reload,\nCmd+D or shake for dev menu`,
@@ -36,6 +37,13 @@ const MapScreen = props => {
             title={'Michelles feet'}
             description={'jk its rona szn'}
           />
+                    <MapViewDirections 
+          origin={{latitude: 43.2600052,longitude: -79.9277422}}
+          destination={{latitude: 42.2600052,longitude: -78.9277422}}
+          apikey={"AIzaSyDFPVM3Jf4ij9aGA321qSez86f7qMybF8c"}
+          strokeWidth={3}
+          strokeColor="hotpink"
+              />
         </MapView>
       </View>
 
