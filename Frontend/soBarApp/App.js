@@ -7,9 +7,16 @@ import Map from './screens/map'
 
 export default function App() {
 
+  
+  const changeMap = (a) => {
+    setMapShow(a);
+  };
+  
+  const [mapShow, setMapShow] = useState(false);
   let content = <Home onStart={changeMap} />;
 
-  const changeMap = () => {
+
+  if (mapShow) {
     content = <Map />;
   };
 
