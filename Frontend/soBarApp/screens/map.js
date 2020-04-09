@@ -11,64 +11,39 @@ const instructions = Platform.select({
 
 const MapScreen = props => {
   return (
-    <View style={styles.container}>
-
-      <View >
-        <Button title="Home Page" styles={{ position: 'absolute' }} onPress={() => props.onStart(false)} />
+    <View>
+      <View style={globalStyles.mapContainer}>
+        <MapView style={globalStyles.map}
+          region={{
+            latitude: 43.2600052,
+            longitude: -79.9277422,
+            latitudeDelta: 0.1,
+            longitudeDelta: 0.1
+          }} >
+          <MapView.Marker
+            coordinate={{
+              latitude: 43.2600052,
+              longitude: -79.9277422
+            }}
+            title={'free samples'}
+            description={'jk its rona szn'}
+          />
+          <MapView.Marker
+            coordinate={{
+              latitude: 42.2600052,
+              longitude: -78.9277422
+            }}
+            title={'Michelles feet'}
+            description={'jk its rona szn'}
+          />
+        </MapView>
       </View>
 
-      <MapView style={styles.map}
-        region={{
-          latitude: 43.2600052,
-          longitude: -79.9277422,
-          latitudeDelta: 0.1,
-          longitudeDelta: 0.1
-        }} >
-        <MapView.Marker
-          coordinate={{
-            latitude: 43.2600052,
-            longitude: -79.9277422
-          }}
-          title={'free samples'}
-          description={'jk its rona szn'}
-        />
-
-
-        <MapView.Marker
-          coordinate={{
-            latitude: 42.2600052,
-            longitude: -78.9277422
-          }}
-          title={'Michelles feet'}
-          description={'jk its rona szn'}
-        />
-
-      </MapView>
-
+      <View style={globalStyles.buttonContainer}>
+        <View style={globalStyles.button}><Button title="Home Page" color='grey' styles={{ position: 'absolute' }} onPress={() => props.onStart(false)} /></View>
+      </View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    top: 200,
-    left: 0,
-    bottom: 0,
-    right: 0,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-  },
-  map: {
-    height: 500,
-    width: 400,
-    top: 200,
-    left: 0,
-    bottom: 0,
-    right: 0,
-
-  }
-
-
-});
 
 export default MapScreen;

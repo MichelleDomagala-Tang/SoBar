@@ -21,7 +21,7 @@ export const globalStyles = StyleSheet.create({
         padding: 10
     },
     button: {
-        width: '40%'
+        width: '40%',
     },
     titleText: {
         padding: 20,
@@ -38,13 +38,8 @@ export const globalStyles = StyleSheet.create({
         width: 35
     },
     mapContainer: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        bottom: 0,
-        right: 0,
-        justifyContent: 'flex-end',
-        alignItems: 'center',
+        height: 530,
+        width: '100%'
     },
     map : {
         position: 'absolute',
