@@ -21,13 +21,13 @@ const preferences = props => {
 
     return (
         <Modal visible={props.visible} animationType="slide" >
+            <View style={globalStyles.cancel}><Button title="X" color="red" onPress={cancelGoalHandler} /></View>
             <View style={globalStyles.inputContainer}>
                 <TextInput 
                     placeholder="Preference"
                     onChangeText={prefInputHandler}
                     value={enteredpref}
                 />
-                <View style={globalStyles.cancel}><Button title="X" color="red" onPress={cancelGoalHandler} /></View>
                 <View style={globalStyles.buttonContainer} >
                     <View style={globalStyles.button}><Button title="CONFIRM" color="grey" onPress={addPrefHandler} /></View>
                 </View>
