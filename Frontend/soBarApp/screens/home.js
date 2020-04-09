@@ -36,6 +36,11 @@ const HomeScreen = props => {
             <Preferences visible={modalVisible}
                 onAddPref={addPrefHandler}
                 onCancel={cancelPrefHandler} />
+            <Text style={globalStyles.titleText} >Bars in the Area:</Text>
+            <FlatList 
+                keyExtractor={(item, index) => item.id}
+            />
+            <Text style={globalStyles.titleText} >Preferences:</Text>
             <FlatList
                 keyExtractor={(item, index) => item.id}
                 data={pref}
