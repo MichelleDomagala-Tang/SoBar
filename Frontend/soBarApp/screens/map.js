@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View, Button } from 'react-native';
 import MapView from 'react-native-maps';
 import { globalStyles } from '../styles/global';
 
@@ -8,12 +8,14 @@ const instructions = Platform.select({
   android: `Double tap R on your keyboard to reload,\nShake or press menu button for dev menu`,
 });
 
-export default function MapScreen() {
+
+const MapScreen = props => {
   return (
-    <View>
-      <Button title="Home Page" styles={{ position: 'absolute' }} />
-    </View>
     <View style={styles.container}>
+
+      <View >
+        <Button title="Home Page" styles={{ position: 'absolute' }} onPress={() => props.onStart(false)} />
+      </View>
 
       <MapView style={styles.map}
         region={{
@@ -68,3 +70,5 @@ const styles = StyleSheet.create({
 
 
 });
+
+export default MapScreen;
