@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Button, Image, Transformation, FlatList } from 'react-native';
+import { View, Text, ScrollView, Button } from 'react-native';
 import { globalStyles } from '../styles/global';
 
 import Preferences from '../screens/preferences'
@@ -38,7 +38,11 @@ const HomeScreen = props => {
                 onAddPref={addPrefHandler}
                 onCancel={cancelPrefHandler} />
             <Text style={globalStyles.titleText} >Bars in the Area:</Text>
-            <Text style={globalStyles.titleText} >Preferences:</Text>
+            <ScrollView>
+                <View style={globalStyles.inputContainer}>
+                    <Text>This is where the bars and button options are displayed</Text>
+                </View>
+            </ScrollView>
         </View>
     );
 }
