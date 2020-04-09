@@ -7,22 +7,22 @@ import PrefItem from '../components/PrefItem'
 
 const HomeScreen = props => {
 
-    const [pref, setpref] = useState([]);
-    const [bars, setBars] = useState([]);
+    //const [pref, setpref] = useState([]);
+    //const [bars, setBars] = useState([]);
     const [modalVisible, setModalVisible] = useState(false);
 
-    const addPrefHandler = prefTitle => {
-        setpref(currentPref => 
-            [...pref,
-            { id: Math.random().toString(), value: prefTitle }]);
+    const addPrefHandler = () => {
+        //setpref(currentPref => 
+            //[...pref,
+            //{ id: Math.random().toString(), value: prefTitle }]);
         setModalVisible(false);
     };
 
-    const removePrefHandler = prefId => {
-        setpref(currentPref => {
-            return currentPref.filter((pref) => pref.id !== prefId)
-        });
-    };
+    //const removePrefHandler = prefId => {
+       // setpref(currentPref => {
+        //    return currentPref.filter((pref) => pref.id !== prefId)
+        //});
+   // };
 
     const cancelPrefHandler = () => {
         setModalVisible(false);
@@ -38,26 +38,7 @@ const HomeScreen = props => {
                 onAddPref={addPrefHandler}
                 onCancel={cancelPrefHandler} />
             <Text style={globalStyles.titleText} >Bars in the Area:</Text>
-            <FlatList 
-                keyExtractor={(item, index) => item.id}
-                data={bars}
-                renderItem={itemData =>
-                    <PrefItem
-                        id={itemData.item.id}
-                        onDelete={removePrefHandler}
-                        title={itemData.item.value}
-                    />}
-            />
             <Text style={globalStyles.titleText} >Preferences:</Text>
-            <FlatList
-                keyExtractor={(item, index) => item.id}
-                data={pref}
-                renderItem={itemData =>
-                    <PrefItem
-                        id={itemData.item.id}
-                        onDelete={removePrefHandler}
-                        title={itemData.item.value} />}
-            />
         </View>
     );
 }
