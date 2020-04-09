@@ -49,9 +49,21 @@ export const globalStyles = StyleSheet.create({
         right: 0,
     },
     inputContainer: {
-        flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        flex: 1,
+        paddingTop: 60
     },
+    screen: {
+        flex: 1
+    },
+    preference: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        padding: 10
+    },
+    addButton: {
+        width: 40
+    }
 });
