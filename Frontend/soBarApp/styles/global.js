@@ -26,7 +26,7 @@ export const globalStyles = StyleSheet.create({
     titleText: {
         padding: 20,
         fontSize: 18,
-        color: 'red'
+        color: 'black'
     },
     paragraph: {
         marginVertical: 8,

@@ -38,13 +38,14 @@ const MapScreen = props => {
             title={'Michelles feet'}
             description={'jk its rona szn'}
           />
-                    <MapViewDirections 
+          
+          <MapViewDirections 
           origin={{latitude: 43.2600052,longitude: -79.9277422}}
           destination={{latitude: 42.2600052,longitude: -78.9277422}}
           apikey={"AIzaSyDFPVM3Jf4ij9aGA321qSez86f7qMybF8c"}
           strokeWidth={3}
           strokeColor="hotpink"
-              />
+          />
         </MapView>
       </View>
 
