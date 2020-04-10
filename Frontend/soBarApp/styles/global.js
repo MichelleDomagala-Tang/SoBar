@@ -58,11 +58,10 @@ export const globalStyles = StyleSheet.create({
     screen: {
         flex: 1
     },
-    preference: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        padding: 10
-    },
+    checkboxContainer: {
+        flexDirection: "row",
+        marginBottom: 20,
+      },
     addButton: {
         width: 40
     }
