@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import { View, Text, Button, Modal, ScrollView, CheckBox } from 'react-native';
 import { globalStyles } from '../styles/global';
 
+
+// @brief Defines the preferences modal
 const preferences = props => {
+    
+    const [pref, setpref] = useState([]);
+
     const [karaokeSelected, setKaraokeSelected] = useState(false);
     const [nightlifeSelec, setNightLifeSelec] = useState(false);
     const [danceSelec, setDanceselec] = useState(false);
@@ -11,15 +16,16 @@ const preferences = props => {
     const [beerSelect, setBeerSelec] = useState(false);
     const [wineSelec, setWineSelec] = useState(false);
     const [cocktailSelec, setCocktailSelec] = useState(false);
-    const [pref, setpref] = useState([]);
 
+    // @brief Adds preference to list of preferences
     const addPrefHandler = () => {
         setpref(pref =>
             [...pref,
-            { id: Math.random().toString(), value: "Karaoke" }]);
+            { id: Math.random().toString(), value: "" }]);
         props.onAddPref();
     };
 
+    // @brief Exits out of preferences modal and clears selection
     const cancelGoalHandler = () => {
         setBeerSelec(false);
         setCocktailSelec(false);
@@ -32,12 +38,15 @@ const preferences = props => {
         props.onCancel();
     };
 
+    // @brief Removes preference from list of preferences
+    // @param prefId id value of preference to be deleted
     const removePrefHandler = prefId => {
         setpref(currentPref => {
             return currentPref.filter((pref) => pref.id !== prefId)
         });
     };
 
+    // @brief Returns view of preferences modal
     return (
         <Modal visible={props.visible} animationType="slide" >
             <View style={globalStyles.screen}>

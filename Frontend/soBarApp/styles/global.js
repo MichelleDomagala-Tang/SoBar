@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native';
 
+
+// @brief Defines global styles to be used in applications
 export const globalStyles = StyleSheet.create({
     header: {
         width: '100%',
