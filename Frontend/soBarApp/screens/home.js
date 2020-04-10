@@ -3,26 +3,15 @@ import { View, Text, ScrollView, Button } from 'react-native';
 import { globalStyles } from '../styles/global';
 
 import Preferences from '../screens/preferences'
-import PrefItem from '../components/PrefItem'
+import PrefItem from '../components/CheckItem'
 
 const HomeScreen = props => {
 
-    //const [pref, setpref] = useState([]);
-    //const [bars, setBars] = useState([]);
     const [modalVisible, setModalVisible] = useState(false);
 
     const addPrefHandler = () => {
-        //setpref(currentPref => 
-            //[...pref,
-            //{ id: Math.random().toString(), value: prefTitle }]);
         setModalVisible(false);
     };
-
-    //const removePrefHandler = prefId => {
-       // setpref(currentPref => {
-        //    return currentPref.filter((pref) => pref.id !== prefId)
-        //});
-   // };
 
     const cancelPrefHandler = () => {
         setModalVisible(false);
