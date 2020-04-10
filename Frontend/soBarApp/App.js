@@ -28,7 +28,7 @@ export default function App() {
     content = <Home onStart={changeMap} />;
   };
 
-  // Returns the display of content
+  // @brief Returns the display of content
   return (
     <View>
       <View style={globalStyles.header}>
