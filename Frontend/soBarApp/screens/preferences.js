@@ -20,6 +20,7 @@ const preferences = props => {
 
     // @brief Adds preference to list of preferences
     function addPrefHandler () {
+        fetch()
         props.onAddPref();
     };
 

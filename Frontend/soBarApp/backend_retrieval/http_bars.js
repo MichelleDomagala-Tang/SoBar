@@ -3,17 +3,17 @@ import { View, Text } from 'react-native'
 
 class BarsHTTP extends Component {
    state = {
-      data: ''
+      data: []
    }
    componentDidMount = () => {
-      fetch('https://jsonplaceholder.typicode.com/posts/1', {
+      fetch('http://1b381c88.ngrok.io/nearby?origin=43.524202,-79.647924&radius=1000', {
          method: 'GET'
       })
       .then((response) => response.json())
       .then((responseJson) => {
-         console.log(responseJson);
+         console.log(responseJson)
          this.setState({
-            data: responseJson
+         data: responseJson.map((item) => <Text>{item.name} {item.address}</Text>)
          })
       })
       .catch((error) => {
@@ -24,7 +24,9 @@ class BarsHTTP extends Component {
       return (
          <View>
             <Text>
-               {this.state.data.body}
+               
+                  {this.state.data}
+               
             </Text>
          </View>
       )
