@@ -9,7 +9,7 @@ const preferences = props => {
    // const [pref, setpref] = useState([]);
     const pref = [];
 
-    const [karaokeSelected, setKaraokeSelected] = useState(false);
+    const [breweriesSelected, setBreweriesSelected] = useState(false);
     const [nightlifeSelec, setNightLifeSelec] = useState(false);
     const [danceSelec, setDanceselec] = useState(false);
     const [foodSelec, setFoodSelec] = useState(false);
@@ -20,18 +20,32 @@ const preferences = props => {
 
     // @brief Adds preference to list of preferences
     function addPrefHandler () {
-       // setpref(pref =>
-        //    [...pref,
-         //   { id: name, value: name }]);
-        pref.push('added to array');
         props.onAddPref();
     };
 
     if (foodSelec) {
-        pref.push('food');
+        pref.push('pub food');
     }
     if (beerSelect) {
         pref.push('beer');
+    }
+    if (sportsSelec) {
+        pref.push('sports');
+    }
+    if (breweriesSelected) {
+        pref.push('brew');
+    }
+    if (nightlifeSelec) {
+        pref.push('nightlife');
+    }
+    if (danceSelec) {
+        pref.push('dance');
+    }
+    if (wineSelec) {
+        pref.push('wine');
+    }
+    if (cocktailSelec) {
+        pref.push('cocktail');
     }
 
     // @brief Exits out of preferences modal and clears selection
@@ -43,7 +57,7 @@ const preferences = props => {
         setFoodSelec(false);
         setSportsSelec(false);
         setWineSelec(false);
-        setKaraokeSelected(false);
+        setBreweries(false);
         props.onCancel();
     };
 
@@ -61,9 +75,6 @@ const preferences = props => {
             <View style={globalStyles.screen}>
                 <View style={globalStyles.cancel}><Button title="X" color="red" onPress={cancelGoalHandler} /></View>
                 <View style={{ padding: 30 }}>
-
-            <Text> preferences = {pref} </Text>
-
                     <View style={globalStyles.checkboxContainer}>
                         <CheckBox
                             value={foodSelec}
@@ -106,11 +117,11 @@ const preferences = props => {
                     </View>
                     <View style={globalStyles.checkboxContainer}>
                         <CheckBox
-                            value={karaokeSelected}
-                            onValueChange={setKaraokeSelected}
+                            value={breweriesSelected}
+                            onValueChange={setBreweriesSelected}
                             style={{ alignSelf: 'center' }}
                         />
-                        <Text style={{ margin: 8 }}>Karaoke</Text>
+                        <Text style={{ margin: 8 }}>Breweries</Text>
                     </View>
                     <View style={globalStyles.checkboxContainer}>
                         <CheckBox
