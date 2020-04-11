@@ -6,7 +6,8 @@ import { globalStyles } from '../styles/global';
 // @brief Defines the preferences modal
 const preferences = props => {
     
-    const [pref, setpref] = useState([]);
+   // const [pref, setpref] = useState([]);
+    let pref = [];
 
     const [karaokeSelected, setKaraokeSelected] = useState(false);
     const [nightlifeSelec, setNightLifeSelec] = useState(false);
@@ -18,10 +19,11 @@ const preferences = props => {
     const [cocktailSelec, setCocktailSelec] = useState(false);
 
     // @brief Adds preference to list of preferences
-    const addPrefHandler = () => {
-        setpref(pref =>
-            [...pref,
-            { id: Math.random().toString(), value: "" }]);
+    function addPrefHandler () {
+       // setpref(pref =>
+        //    [...pref,
+         //   { id: name, value: name }]);
+        pref.push('added to array');
         props.onAddPref();
     };
 
@@ -52,6 +54,9 @@ const preferences = props => {
             <View style={globalStyles.screen}>
                 <View style={globalStyles.cancel}><Button title="X" color="red" onPress={cancelGoalHandler} /></View>
                 <View style={{ padding: 30 }}>
+
+            <Text> preferences = {pref[0]} </Text>
+
                     <View style={globalStyles.checkboxContainer}>
                         <CheckBox
                             value={foodSelec}
