@@ -30,6 +30,7 @@ public class ShortestHamiltonianPath {
             G.addEdge(shortest.get(i), shortest.get(i + 1), distTo(shortest.get(i), shortest.get(i + 1)));
     }
 
+    //This is based on an algorithm for a hamiltonian path permutation
     //https://www.geeksforgeeks.org/heaps-algorithm-for-generating-permutations/
     public void permutate(ArrayList<Business> a, int size) {
 
@@ -51,7 +52,7 @@ public class ShortestHamiltonianPath {
 
     }
 
-    //if they are all marked and there are v-1 edges then it will be valid
+    //Determines if a permutation is valid for a hamiltonian path
     public boolean validPermutation(ArrayList<Business> barSeq) {
         //check if they are all marked first
         for (Business b : G.getBars())
@@ -64,6 +65,7 @@ public class ShortestHamiltonianPath {
         return Utils.dist(a.getLatitude(), a.getLongitude(), b.getLatitude(), b.getLongitude());
     }
 
+    //This finds the shortest out of a list of the avalible hamiltonian paths
     public ArrayList<Business> findShortest() {
         ArrayList<Business> shortest = paths.get(0);
         double bestDist = Double.POSITIVE_INFINITY;
