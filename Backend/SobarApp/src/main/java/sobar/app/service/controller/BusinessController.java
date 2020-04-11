@@ -1,6 +1,5 @@
 package sobar.app.service.controller;
 
-import javafx.util.Builder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import sobar.app.service.Utils;
@@ -10,7 +9,6 @@ import sobar.app.service.exception.BusinessNotFoundException;
 import sobar.app.service.exception.InvalidParamFormatException;
 import sobar.app.service.model.Business;
 import sobar.app.service.repository.BusinessRepository;
-import sun.util.BuddhistCalendar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,15 +25,11 @@ public class BusinessController {
 
     // Aggregate root
 
+    // TODO: Get rid of this, it's for debug only
     @GetMapping("/businesses")
     public List<Business> all() {
         return repository.findAll();
     }
-
-//    @PostMapping("/businesses")
-//    public Business newEmployee(@RequestBody Business newEmployee) {
-//        return repository.save(newEmployee);
-//    }
 
     // Single item
 
@@ -134,24 +128,5 @@ public class BusinessController {
         return repository.findById(id)
                 .orElseThrow(() -> new BusinessNotFoundException(id));
     }
-
-//    @PutMapping("/employees/{id}")
-//    public Business replaceEmployee(@RequestBody Business newEmployee, @PathVariable Long id) {
-//        return repository.findById(id)
-//                .map(employee -> {
-//                    employee.setName(newEmployee.getName());
-//                    employee.setRole(newEmployee.getRole());
-//                    return repository.save(employee);
-//                })
-//                .orElseGet(() -> {
-//                    newEmployee.setId(id);
-//                    return repository.save(newEmployee);
-//                });
-//    }
-
-//    @DeleteMapping("/businesses/{id}")
-//    public void deleteEmployee(@PathVariable Long id) {
-//        repository.deleteById(id);
-//    }
 
 }
