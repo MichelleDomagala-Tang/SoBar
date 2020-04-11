@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, Button } from 'react-native';
 import { globalStyles } from '../styles/global';
+import BarsHTTP from '../http_bars.js';
 
 import Preferences from '../screens/preferences'
 
@@ -26,6 +27,7 @@ const HomeScreen = props => {
                 onAddPref={cancelPrefHandler}
                 onCancel={cancelPrefHandler} />
             <Text style={globalStyles.titleText} >Bars in the Area:</Text>
+        <BarsHTTP />
             <ScrollView>
                 <View style={globalStyles.inputContainer}>
                     <Text>This is where the bars and button options are displayed</Text>
