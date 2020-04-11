@@ -23,6 +23,7 @@ const preferences = props => {
         props.onAddPref();
     };
 
+    // @brief Adds selected checkbox to preferences
     if (foodSelec) {
         pref.push('pub food');
     }
