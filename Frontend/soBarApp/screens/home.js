@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, Button } from 'react-native';
 import { globalStyles } from '../styles/global';
-import BarsHTTP from '../http_bars.js';
+import BarsHTTP from '../backend_retrieval/http_bars.js';
 
 import Preferences from '../screens/preferences'
 

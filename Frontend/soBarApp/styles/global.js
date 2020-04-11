@@ -52,19 +52,16 @@ export const globalStyles = StyleSheet.create({
     },
     inputContainer: {
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'space-around',
         alignItems: 'center',
         flex: 1,
-        paddingTop: 60
+        paddingTop: 50
     },
     screen: {
         flex: 1
     },
     checkboxContainer: {
         flexDirection: "row",
-        marginBottom: 20,
-      },
-    addButton: {
-        width: 40
+        marginBottom: 20
     }
 });

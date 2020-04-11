@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Button, Modal, ScrollView, CheckBox } from 'react-native';
+import { View, Text, Button, Modal, CheckBox } from 'react-native';
 import { globalStyles } from '../styles/global';
 
 
@@ -91,8 +91,8 @@ const preferences = props => {
         <Modal visible={props.visible} animationType="slide" >
             <View style={globalStyles.screen}>
                 <View style={globalStyles.cancel}><Button title="X" color="red" onPress={cancelGoalHandler} /></View>
-                <View style={{ padding: 30 }}>
-                    <Text>preference={pref}</Text>
+                <View style={globalStyles.inputContainer}>
+                    <Text>preferences = {pref}</Text>
                     <View style={globalStyles.checkboxContainer}>
                         <CheckBox
                             value={foodSelec}
@@ -157,10 +157,10 @@ const preferences = props => {
                         />
                         <Text style={{ margin: 8 }}>Dance</Text>
                     </View>
+                </View>
                     <View style={globalStyles.buttonContainer} >
                         <View style={globalStyles.button}><Button title="CONFIRM" color="grey" onPress={addPrefHandler} /></View>
                     </View>
-                </View>
             </View>
         </Modal>
     )
