@@ -7,7 +7,7 @@ import { globalStyles } from '../styles/global';
 const preferences = props => {
     
    // const [pref, setpref] = useState([]);
-    let pref = [];
+    const pref = [];
 
     const [karaokeSelected, setKaraokeSelected] = useState(false);
     const [nightlifeSelec, setNightLifeSelec] = useState(false);
@@ -26,6 +26,13 @@ const preferences = props => {
         pref.push('added to array');
         props.onAddPref();
     };
+
+    if (foodSelec) {
+        pref.push('food');
+    }
+    if (beerSelect) {
+        pref.push('beer');
+    }
 
     // @brief Exits out of preferences modal and clears selection
     const cancelGoalHandler = () => {
@@ -55,7 +62,7 @@ const preferences = props => {
                 <View style={globalStyles.cancel}><Button title="X" color="red" onPress={cancelGoalHandler} /></View>
                 <View style={{ padding: 30 }}>
 
-            <Text> preferences = {pref[0]} </Text>
+            <Text> preferences = {pref} </Text>
 
                     <View style={globalStyles.checkboxContainer}>
                         <CheckBox
