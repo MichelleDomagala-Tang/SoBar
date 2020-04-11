@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Button, Image, StyleSheet } from 'react-native';
 import { globalStyles } from './styles/global';
-import BarsHTTP from './http_bars.js';
 
 import Home from './screens/home'
 import Map from './screens/map'
@@ -36,7 +35,6 @@ export default function App() {
         <Image source={require('./logo.png')} style={globalStyles.logo} />
       </View>
       <View>
-        <BarsHTTP />
         {content}
       </View>
     </View>
