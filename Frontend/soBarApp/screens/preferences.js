@@ -9,12 +9,12 @@ const preferences = props => {
    // const [pref, setpref] = useState([]);
     const pref = [];
 
-    const [breweriesSelected, setBreweriesSelected] = useState(false);
+    const [breweriesSelec, setBreweriesSelec] = useState(false);
     const [nightlifeSelec, setNightLifeSelec] = useState(false);
-    const [danceSelec, setDanceselec] = useState(false);
+    const [danceSelec, setDanceSelec] = useState(false);
     const [foodSelec, setFoodSelec] = useState(false);
     const [sportsSelec, setSportsSelec] = useState(false);
-    const [beerSelect, setBeerSelec] = useState(false);
+    const [beerSelec, setBeerSelec] = useState(false);
     const [wineSelec, setWineSelec] = useState(false);
     const [cocktailSelec, setCocktailSelec] = useState(false);
 
@@ -25,28 +25,52 @@ const preferences = props => {
 
     // @brief Adds selected checkbox to preferences
     if (foodSelec) {
-        pref.push('pub food');
+        if(pref.length !== 0) {
+            pref.push('&');
+        }
+        pref.push('pref=pub food');
     }
-    if (beerSelect) {
-        pref.push('beer');
+    if (beerSelec) {
+        if(pref.length !== 0) {
+            pref.push('&');
+        }
+        pref.push('pref=beer');
     }
     if (sportsSelec) {
-        pref.push('sports');
+        if(pref.length !== 0) {
+            pref.push('&');
+        }
+        pref.push('pref=sports');
     }
-    if (breweriesSelected) {
-        pref.push('brew');
+    if (breweriesSelec) {
+        if(pref.length !== 0) {
+            pref.push('&');
+        }
+        pref.push('pref=brew');
     }
     if (nightlifeSelec) {
-        pref.push('nightlife');
+        if(pref.length !== 0) {
+            pref.push('&');
+        }
+        pref.push('pref=nightlife');
     }
     if (danceSelec) {
-        pref.push('dance');
+        if(pref.length !== 0) {
+            pref.push('&');
+        }
+        pref.push('pref=dance');
     }
     if (wineSelec) {
-        pref.push('wine');
+        if(pref.length !== 0) {
+            pref.push('&');
+        }
+        pref.push('pref=wine');
     }
     if (cocktailSelec) {
-        pref.push('cocktail');
+        if(pref.length !== 0) {
+            pref.push('&');
+        }
+        pref.push('pref=cocktail');
     }
 
     // @brief Exits out of preferences modal and clears selection
@@ -54,20 +78,12 @@ const preferences = props => {
         setBeerSelec(false);
         setCocktailSelec(false);
         setNightLifeSelec(false);
-        setDanceselec(false);
+        setDanceSelec(false);
         setFoodSelec(false);
         setSportsSelec(false);
         setWineSelec(false);
-        setBreweries(false);
+        setBreweriesSelec(false);
         props.onCancel();
-    };
-
-    // @brief Removes preference from list of preferences
-    // @param prefId id value of preference to be deleted
-    const removePrefHandler = prefId => {
-        setpref(currentPref => {
-            return currentPref.filter((pref) => pref.id !== prefId)
-        });
     };
 
     // @brief Returns view of preferences modal
@@ -76,6 +92,7 @@ const preferences = props => {
             <View style={globalStyles.screen}>
                 <View style={globalStyles.cancel}><Button title="X" color="red" onPress={cancelGoalHandler} /></View>
                 <View style={{ padding: 30 }}>
+                    <Text>preference={pref}</Text>
                     <View style={globalStyles.checkboxContainer}>
                         <CheckBox
                             value={foodSelec}
@@ -94,7 +111,7 @@ const preferences = props => {
                     </View>
                     <View style={globalStyles.checkboxContainer}>
                         <CheckBox
-                            value={beerSelect}
+                            value={beerSelec}
                             onValueChange={setBeerSelec}
                             style={{ alignSelf: 'center' }}
                         />
@@ -118,8 +135,8 @@ const preferences = props => {
                     </View>
                     <View style={globalStyles.checkboxContainer}>
                         <CheckBox
-                            value={breweriesSelected}
-                            onValueChange={setBreweriesSelected}
+                            value={breweriesSelec}
+                            onValueChange={setBreweriesSelec}
                             style={{ alignSelf: 'center' }}
                         />
                         <Text style={{ margin: 8 }}>Breweries</Text>
@@ -135,7 +152,7 @@ const preferences = props => {
                     <View style={globalStyles.checkboxContainer}>
                         <CheckBox
                             value={danceSelec}
-                            onValueChange={setDanceselec}
+                            onValueChange={setDanceSelec}
                             style={{ alignSelf: 'center' }}
                         />
                         <Text style={{ margin: 8 }}>Dance</Text>
