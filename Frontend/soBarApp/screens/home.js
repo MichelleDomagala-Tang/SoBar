@@ -29,7 +29,7 @@ const HomeScreen = props => {
             <Text style={globalStyles.titleText} >Bars in the Area:</Text>
         <BarsHTTP />
             <ScrollView>
-                <View style={globalStyles.inputContainer}>
+                <View>
                     <Text>This is where the bars and button options are displayed</Text>
                 </View>
             </ScrollView>

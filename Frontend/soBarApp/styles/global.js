@@ -52,10 +52,10 @@ export const globalStyles = StyleSheet.create({
     },
     inputContainer: {
         flexDirection: 'column',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        flex: 1,
-        paddingTop: 50
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        paddingTop: 60,
+        paddingLeft: 150,
     },
     screen: {
         flex: 1

@@ -92,7 +92,6 @@ const preferences = props => {
             <View style={globalStyles.screen}>
                 <View style={globalStyles.cancel}><Button title="X" color="red" onPress={cancelGoalHandler} /></View>
                 <View style={globalStyles.inputContainer}>
-                    <Text>preferences = {pref}</Text>
                     <View style={globalStyles.checkboxContainer}>
                         <CheckBox
                             value={foodSelec}
