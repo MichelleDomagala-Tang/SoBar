@@ -75,6 +75,7 @@ const MapScreen = props => {
       <View style={globalStyles.buttonContainer}>
         <View style={globalStyles.button}><Button title="Home Page" color='grey' styles={{ position: 'absolute' }} onPress={() => props.onStart(false)} /></View>
       </View>
+
     </View>
   );
 }
