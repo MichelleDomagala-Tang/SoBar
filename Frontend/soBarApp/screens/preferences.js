@@ -5,9 +5,8 @@ import { globalStyles } from '../styles/global';
 
 // @brief Defines the preferences modal
 const preferences = props => {
-    
-   // const [pref, setpref] = useState([]);
-    const pref = [];
+
+   global.pref = [];
 
     const [breweriesSelec, setBreweriesSelec] = useState(false);
     const [nightlifeSelec, setNightLifeSelec] = useState(false);
@@ -21,36 +20,33 @@ const preferences = props => {
     // @brief Adds preference to list of preferences
     // NOTE: Update URL to include endpoint
     function addPrefHandler () {
-        fetch("&pref=" + encodeURIComponent(JSON.stringify(pref)),
-            method = "GET",
-            )
         props.onAddPref();
     };
 
     // @brief Adds selected checkbox to preferences
     if (foodSelec) {
-        pref.push('pub food');
+        global.pref.push('pub food');
     }
     if (beerSelec) {
-        pref.push('beer');
+        global.pref.push('beer');
     }
     if (sportsSelec) {
-        pref.push('sports');
+        global.pref.push('sports');
     }
     if (breweriesSelec) {
-        pref.push('brew');
+        global.pref.push('brew');
     }
     if (nightlifeSelec) {
-        pref.push('nightlife');
+        global.pref.push('nightlife');
     }
     if (danceSelec) {
-        pref.push('dance');
+        global.pref.push('dance');
     }
     if (wineSelec) {
-        pref.push('wine');
+        global.pref.push('wine');
     }
     if (cocktailSelec) {
-        pref.push('cocktail');
+        global.pref.push('cocktail');
     }
 
     // @brief Exits out of preferences modal and clears selection

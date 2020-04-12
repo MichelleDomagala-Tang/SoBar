@@ -8,7 +8,14 @@ class BarsHTTP extends Component {
 
    // NOTE: Update URL to include endpoint
    componentDidMount = () => {
-      fetch('http://1b381c88.ngrok.io/nearby?origin=43.524202,-79.647924&radius=1000', {
+      
+      var website = 'http://1b381c88.ngrok.io/nearby?origin=43.524202,-79.647924&radius=1000';
+
+      if (global.pref) {
+         website = 'http://1b381c88.ngrok.io/nearby?origin=43.524202,-79.647924&radius=1000' + "&pref=" + encodeURIComponent(JSON.stringify(global.pref));
+      }
+
+      fetch(website, {
          method: 'GET'
       })
       .then((response) => response.json())
@@ -28,7 +35,7 @@ class BarsHTTP extends Component {
             <Text>
                
                   {this.state.data}
-                  {global.sup}
+                  {global.pref.toString()}
             </Text>
          </View>
       )
