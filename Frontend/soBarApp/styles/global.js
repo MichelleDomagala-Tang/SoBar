@@ -50,12 +50,19 @@ export const globalStyles = StyleSheet.create({
         bottom: 0,
         right: 0,
     },
-    inputContainer: {
+    prefContainer: {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'flex-start',
         paddingTop: 60,
         paddingLeft: 150,
+    },
+    barsContainer: {
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        paddingLeft: 21,
+        width: '100%',
     },
     screen: {
         flex: 1

@@ -6,7 +6,7 @@ import Home from './screens/home'
 import Map from './screens/map'
 
 global.pref = [];
-
+global.route = [];
 
 // @brief Displays current screen of mobile application
 export default function App() {

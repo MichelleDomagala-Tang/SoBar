@@ -67,7 +67,7 @@ const preferences = props => {
         <Modal visible={props.visible} animationType="slide" >
             <View style={globalStyles.screen}>
                 <View style={globalStyles.cancel}><Button title="X" color="red" onPress={cancelGoalHandler} /></View>
-                <View style={globalStyles.inputContainer}>
+                <View style={globalStyles.prefContainer}>
                     <View style={globalStyles.checkboxContainer}>
                         <CheckBox
                             value={foodSelec}
