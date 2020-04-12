@@ -70,5 +70,10 @@ export const globalStyles = StyleSheet.create({
     checkboxContainer: {
         flexDirection: "row",
         marginBottom: 20
+    },
+    bar: {
+        //backgroundColor: 'orange',
+        //alignSelf: 'flex-start',
+        width: '95%',
     }
 });

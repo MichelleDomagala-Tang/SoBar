@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, CheckBox } from 'react-native'
+import { globalStyles } from '../styles/global';
 
 class BarsHTTP extends Component {
    state = {
@@ -22,7 +23,7 @@ class BarsHTTP extends Component {
       .then((responseJson) => {
          console.log(responseJson)
          this.setState({
-         data: responseJson.map((item) => <Text>{item.name}{"\n"}Address: {item.address}{"\n"}Star Rating: {item.stars}/5{"\n\n"}</Text>)
+         data: responseJson.map((item) => <View style={globalStyles.bar}><Text>{item.name}{"\n"}Address: {item.address}{"\n"}Star Rating: {item.stars}/5{"\n"}</Text></View>)
          })
       })
       .catch((error) => {
@@ -30,11 +31,9 @@ class BarsHTTP extends Component {
       });
    }
    render() {
-      return (
+      return (   
          <View>
-            <Text>
-                  {this.state.data}
-            </Text>
+               {this.state.data}
          </View>
       )
    }

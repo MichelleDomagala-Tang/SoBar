@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { Platform, StyleSheet, Text, View, Button } from 'react-native';
 import MapView from 'react-native-maps';
 import { globalStyles } from '../styles/global';
@@ -12,7 +12,7 @@ const instructions = Platform.select({
 
 // @brief Defines the Map Display Screen
 const MapScreen = props => {
-
+    const [markerLocation, setMarkerLocation] = useState([]);
   
     state = {
       markerData : {
