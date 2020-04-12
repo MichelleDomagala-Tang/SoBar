@@ -7,9 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import com.google.gson.JsonElement;
+
 @Data
 @Entity
 public class Business {
+	
+	private transient BusinessAttributes attributes;
 
     private @Id @GeneratedValue Long id;
 
@@ -25,4 +29,11 @@ public class Business {
     private double latitude;
     private double longitude;
     private double stars;
+    
+    public JsonElement getAttribute(String memberName) {   
+    	if (attributes.getAttributes() == null)
+    		return null;
+    	
+		return attributes.getAttributes().get(memberName);
+    }
 }
