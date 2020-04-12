@@ -26,10 +26,10 @@ public class BusinessController {
     // Aggregate root
 
     // TODO: Get rid of this, it's for debug only
-    @GetMapping("/businesses")
-    public List<Business> all() {
-        return repository.findAll();
-    }
+//    @GetMapping("/businesses")
+//    public List<Business> all() {
+//        return repository.findAll();
+//    }
 
     // Single item
 
@@ -54,21 +54,22 @@ public class BusinessController {
         return nearby;
     }
 
-    @GetMapping("/nearbyfiltered")
-    public List<Business> getNearbyWithPrefs(@RequestParam String origin, @RequestParam Integer radius, @RequestParam List<String> pref) {
-        String[] tok = origin.split(",");
+    @GetMapping("/nearby/filter")
+    public List<Business> getNearbyWithPrefs(@RequestParam String origin, @RequestParam Integer radius, @RequestParam String pref) {
+        String[] originTok = origin.split(",");
+        String[] prefTok = pref.split(",");
 
-        if (tok.length != 2) {
+        if (originTok.length != 2) {
             throw new InvalidParamFormatException();
         }
 
         List<Business> nearby = new ArrayList<>();
-        double lat = Double.parseDouble(tok[0]);
-        double lon = Double.parseDouble(tok[1]);
+        double lat = Double.parseDouble(originTok[0]);
+        double lon = Double.parseDouble(originTok[1]);
 
         for (Business b : repository.findAll()) {
             if (Utils.dist(lat, lon, b.getLatitude(), b.getLongitude()) <= radius) {
-                for (String s : pref) {
+                for (String s : prefTok) {
                     if (b.getCategories().toLowerCase().contains(s.toLowerCase())) {
                         nearby.add(b);
                     }
