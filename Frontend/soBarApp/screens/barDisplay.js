@@ -3,7 +3,6 @@ import { View, Text, TouchableOpacity, FlatList } from 'react-native'
 import { globalStyles } from '../styles/global';
 
 function Item({ item, selected, onSelect }) {
-    const words = item.split(',');
     return (
        <TouchableOpacity
           onPress={() => onSelect(id)}
@@ -12,17 +11,10 @@ function Item({ item, selected, onSelect }) {
              { backgroundColor: selected ? '#6e3b6e' : '#f9c2ff' },
           ]}
        >
-          <Text style={globalStyles.bar}>{words[1]}{"\n"}Address: {words[2]}{"\n"}Star Rating: {words[3]}/5{"\n"}</Text>
+          <Text style={globalStyles.bar}>{item}</Text>
        </TouchableOpacity>
     );
  }
-
-function splitWords({ item }) {
-    const words = item.split(',');
-    return (
-        {words}
-    );
-}
 
 const BarDisplay = props => {
     const[selected, setSelected] = useState(new Map());

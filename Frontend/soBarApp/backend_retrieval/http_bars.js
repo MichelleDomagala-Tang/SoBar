@@ -9,13 +9,12 @@ state = {
 }
 
 // NOTE: Update URL to include endpoint
-//<View style={globalStyles.bar}><Text>{item.name}{"\n"}Address: {item.address}{"\n"}Star Rating: {item.stars}/5{"\n"}</Text></View>
 componentDidMount = () => {
 
-   var website = 'http://41638684.ngrok.io/nearby?origin=43.524202,-79.647924&radius=1000';
+   var website = 'http://e81f9526.ngrok.io/nearby?origin=43.524202,-79.647924&radius=1000';
 
    if (global.pref.length !== 0) {
-      website = 'http://41638684.ngrok.io/nearby/filter?origin=43.524202,-79.647924&radius=1000' + "&pref=" + encodeURIComponent(JSON.stringify(global.pref));
+      website = 'http://e81f9526.ngrok.io/nearby/filter?origin=43.524202,-79.647924&radius=1000' + "&pref=" + encodeURIComponent(JSON.stringify(global.pref));
    }
 
    fetch(website, {
@@ -25,7 +24,10 @@ componentDidMount = () => {
       .then((responseJson) => {
          console.log(responseJson)
          this.setState({
-            data: responseJson.map((item) => <Text>{item.id},{item.name},{item.address},{item.stars}</Text>)
+            data: responseJson.map((item) => 
+            <li key={item.id}>
+               <Text>{item.name}{"\n"}Address: {item.address}{"\n"}Star Rating: {item.stars}/5</Text>
+            </li>)
          })
       })
       .catch((error) => {
