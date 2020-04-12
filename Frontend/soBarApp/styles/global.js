@@ -55,7 +55,7 @@ export const globalStyles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'flex-start',
         paddingTop: 60,
-        paddingLeft: 150,
+        paddingLeft: 50,
     },
     barsContainer: {
         flexDirection: 'column',

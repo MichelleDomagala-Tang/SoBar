@@ -8,14 +8,14 @@ const preferences = props => {
 
    global.pref = [];
 
-    const [breweriesSelec, setBreweriesSelec] = useState(false);
-    const [nightlifeSelec, setNightLifeSelec] = useState(false);
-    const [danceSelec, setDanceSelec] = useState(false);
-    const [foodSelec, setFoodSelec] = useState(false);
-    const [sportsSelec, setSportsSelec] = useState(false);
-    const [beerSelec, setBeerSelec] = useState(false);
-    const [wineSelec, setWineSelec] = useState(false);
-    const [cocktailSelec, setCocktailSelec] = useState(false);
+    const [breweriesSelected, setBreweriesSelected] = useState(false);
+    const [nightlifeSelected, setNightLifeSelected] = useState(false);
+    const [danceSelected, setDanceSelected] = useState(false);
+    const [foodSelected, setFoodSelected] = useState(false);
+    const [sportsSelected, setSportsSelected] = useState(false);
+    const [beerSelected, setBeerSelected] = useState(false);
+    const [wineSelected, setWineSelected] = useState(false);
+    const [cocktailSelected, setCocktailSelected] = useState(false);
 
     // @brief Adds preference to list of preferences
     // NOTE: Update URL to include endpoint
@@ -24,41 +24,41 @@ const preferences = props => {
     };
 
     // @brief Adds selected checkbox to preferences
-    if (foodSelec) {
+    if (foodSelected) {
         global.pref.push('pub food');
     }
-    if (beerSelec) {
+    if (beerSelected) {
         global.pref.push('beer');
     }
-    if (sportsSelec) {
+    if (sportsSelected) {
         global.pref.push('sports');
     }
-    if (breweriesSelec) {
+    if (breweriesSelected) {
         global.pref.push('brew');
     }
-    if (nightlifeSelec) {
+    if (nightlifeSelected) {
         global.pref.push('nightlife');
     }
-    if (danceSelec) {
+    if (danceSelected) {
         global.pref.push('dance');
     }
-    if (wineSelec) {
+    if (wineSelected) {
         global.pref.push('wine');
     }
-    if (cocktailSelec) {
+    if (cocktailSelected) {
         global.pref.push('cocktail');
     }
 
     // @brief Exits out of preferences modal and clears selection
     const cancelGoalHandler = () => {
-        setBeerSelec(false);
-        setCocktailSelec(false);
-        setNightLifeSelec(false);
-        setDanceSelec(false);
-        setFoodSelec(false);
-        setSportsSelec(false);
-        setWineSelec(false);
-        setBreweriesSelec(false);
+        setBeerSelected(false);
+        setCocktailSelected(false);
+        setNightLifeSelected(false);
+        setDanceSelected(false);
+        setFoodSelected(false);
+        setSportsSelected(false);
+        setWineSelected(false);
+        setBreweriesSelected(false);
         props.onCancel();
     };
 
@@ -70,64 +70,64 @@ const preferences = props => {
                 <View style={globalStyles.prefContainer}>
                     <View style={globalStyles.checkboxContainer}>
                         <CheckBox
-                            value={foodSelec}
-                            onValueChange={setFoodSelec}
+                            value={foodSelected}
+                            onValueChange={setFoodSelected}
                             style={{ alignSelf: 'center' }}
                         />
                         <Text style={{ margin: 8 }}>Food</Text>
                     </View>
                     <View style={globalStyles.checkboxContainer}>
                         <CheckBox
-                            value={sportsSelec}
-                            onValueChange={setSportsSelec}
+                            value={sportsSelected}
+                            onValueChange={setSportsSelected}
                             style={{ alignSelf: 'center' }}
                         />
                         <Text style={{ margin: 8 }}>Sports</Text>
                     </View>
                     <View style={globalStyles.checkboxContainer}>
                         <CheckBox
-                            value={beerSelec}
-                            onValueChange={setBeerSelec}
+                            value={beerSelected}
+                            onValueChange={setBeerSelected}
                             style={{ alignSelf: 'center' }}
                         />
                         <Text style={{ margin: 8 }}>Beer</Text>
                     </View>
                     <View style={globalStyles.checkboxContainer}>
                         <CheckBox
-                            value={wineSelec}
-                            onValueChange={setWineSelec}
+                            value={wineSelected}
+                            onValueChange={setWineSelected}
                             style={{ alignSelf: 'center' }}
                         />
                         <Text style={{ margin: 8 }}>Wine</Text>
                     </View>
                     <View style={globalStyles.checkboxContainer}>
                         <CheckBox
-                            value={cocktailSelec}
-                            onValueChange={setCocktailSelec}
+                            value={cocktailSelected}
+                            onValueChange={setCocktailSelected}
                             style={{ alignSelf: 'center' }}
                         />
                         <Text style={{ margin: 8 }}>Cocktail</Text>
                     </View>
                     <View style={globalStyles.checkboxContainer}>
                         <CheckBox
-                            value={breweriesSelec}
-                            onValueChange={setBreweriesSelec}
+                            value={breweriesSelected}
+                            onValueChange={setBreweriesSelected}
                             style={{ alignSelf: 'center' }}
                         />
                         <Text style={{ margin: 8 }}>Breweries</Text>
                     </View>
                     <View style={globalStyles.checkboxContainer}>
                         <CheckBox
-                            value={nightlifeSelec}
-                            onValueChange={setNightLifeSelec}
+                            value={nightlifeSelected}
+                            onValueChange={setNightLifeSelected}
                             style={{ alignSelf: 'center' }}
                         />
                         <Text style={{ margin: 8 }}>Nightlife</Text>
                     </View>
                     <View style={globalStyles.checkboxContainer}>
                         <CheckBox
-                            value={danceSelec}
-                            onValueChange={setDanceSelec}
+                            value={danceSelected}
+                            onValueChange={setDanceSelected}
                             style={{ alignSelf: 'center' }}
                         />
                         <Text style={{ margin: 8 }}>Dance</Text>
