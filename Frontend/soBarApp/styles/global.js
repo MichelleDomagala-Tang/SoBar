@@ -26,7 +26,7 @@ export const globalStyles = StyleSheet.create({
         width: '40%',
     },
     titleText: {
-        padding: 20,
+        padding: 15,
         fontSize: 18,
         color: 'black'
     },
