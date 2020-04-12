@@ -19,59 +19,38 @@ const preferences = props => {
     const [cocktailSelec, setCocktailSelec] = useState(false);
 
     // @brief Adds preference to list of preferences
+    // NOTE: Update URL to include endpoint
     function addPrefHandler () {
-        fetch()
+        fetch("&pref=" + encodeURIComponent(JSON.stringify(pref)),
+            method = "GET",
+            )
         props.onAddPref();
     };
 
     // @brief Adds selected checkbox to preferences
     if (foodSelec) {
-        if(pref.length !== 0) {
-            pref.push('&');
-        }
-        pref.push('pref=pub food');
+        pref.push('pub food');
     }
     if (beerSelec) {
-        if(pref.length !== 0) {
-            pref.push('&');
-        }
-        pref.push('pref=beer');
+        pref.push('beer');
     }
     if (sportsSelec) {
-        if(pref.length !== 0) {
-            pref.push('&');
-        }
-        pref.push('pref=sports');
+        pref.push('sports');
     }
     if (breweriesSelec) {
-        if(pref.length !== 0) {
-            pref.push('&');
-        }
-        pref.push('pref=brew');
+        pref.push('brew');
     }
     if (nightlifeSelec) {
-        if(pref.length !== 0) {
-            pref.push('&');
-        }
-        pref.push('pref=nightlife');
+        pref.push('nightlife');
     }
     if (danceSelec) {
-        if(pref.length !== 0) {
-            pref.push('&');
-        }
-        pref.push('pref=dance');
+        pref.push('dance');
     }
     if (wineSelec) {
-        if(pref.length !== 0) {
-            pref.push('&');
-        }
-        pref.push('pref=wine');
+        pref.push('wine');
     }
     if (cocktailSelec) {
-        if(pref.length !== 0) {
-            pref.push('&');
-        }
-        pref.push('pref=cocktail');
+        pref.push('cocktail');
     }
 
     // @brief Exits out of preferences modal and clears selection

@@ -5,7 +5,7 @@ import { globalStyles } from './styles/global';
 import Home from './screens/home'
 import Map from './screens/map'
 
-
+global.sup = "jimmy"
 // @brief Displays current screen of mobile application
 export default function App() {
   

@@ -5,6 +5,8 @@ class BarsHTTP extends Component {
    state = {
       data: []
    }
+
+   // NOTE: Update URL to include endpoint
    componentDidMount = () => {
       fetch('http://1b381c88.ngrok.io/nearby?origin=43.524202,-79.647924&radius=1000', {
          method: 'GET'
@@ -26,7 +28,7 @@ class BarsHTTP extends Component {
             <Text>
                
                   {this.state.data}
-               
+                  {global.sup}
             </Text>
          </View>
       )
