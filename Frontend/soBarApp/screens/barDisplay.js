@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import { View, Text, TouchableOpacity, FlatList } from 'react-native'
 import { globalStyles } from '../styles/global';
 
-function Item({ item, selected, onSelect }) {
+function Item({ id, item, selected, onSelect }) {
     return (
        <TouchableOpacity
           onPress={() => onSelect(id)}
           style={[
              globalStyles.item,
-             { backgroundColor: selected ? '#6e3b6e' : '#f9c2ff' },
+             { backgroundColor: selected ? '#F97302' : '#F78D34' },
           ]}
        >
           <Text style={globalStyles.bar}>{item}</Text>
@@ -30,13 +30,13 @@ const BarDisplay = props => {
 
     return (
         <View style={globalStyles.barsContainer}>
-            <Text>{props.values[0]}</Text>
            <FlatList
               data={props.values}
               renderItem={({ item }) => ( 
                  <Item
+                    id = {Math.random().toString()}
                     item={item}
-                    selected={!!selected.get('hbfeiqwjn')}
+                    selected={!!selected.get(item.id)}
                     onSelect={onSelect}
                  />
               )}

@@ -26,6 +26,7 @@ export const globalStyles = StyleSheet.create({
         width: '40%',
     },
     titleText: {
+        paddingLeft: 30,
         padding: 15,
         fontSize: 18,
         color: 'black'
@@ -72,11 +73,10 @@ export const globalStyles = StyleSheet.create({
         marginBottom: 20
     },
     item: {
-        backgroundColor: '#f9c2ff',
         padding: 10,
         marginVertical: 4,
         marginHorizontal: 8,
-        width: '90%'
+        width: '100%'
     },
     bar: {
         fontSize: 13
