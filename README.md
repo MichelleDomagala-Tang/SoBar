@@ -5,7 +5,7 @@ It will generate the output.txt file which will contain the sample information t
 
 
 !IMPORTANT!
-This is a gradle project so you must import the project as a "gradle project" in eclipse  order to compile it!
+This is a gradle project so you must import the project as a "gradle project" in eclipse in order to compile it!
 Please email one of us if there are difficulties.
 
 
