@@ -27,12 +27,11 @@ const HomeScreen = props => {
                 onAddPref={cancelPrefHandler}
                 onCancel={cancelPrefHandler} />
             <Text style={globalStyles.titleText} >Bars in the Area:</Text>
-        <BarsHTTP />
+            <View style={globalStyles.barsContainer}>
             <ScrollView>
-                <View>
-                    <Text>This is where the bars and button options are displayed</Text>
-                </View>
+                <BarsHTTP />
             </ScrollView>
+            </View>
         </View>
     );
 }
