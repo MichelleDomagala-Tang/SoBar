@@ -13,6 +13,19 @@ const instructions = Platform.select({
 // @brief Defines the Map Display Screen
 const MapScreen = props => {
 
+  
+    state = {
+      markerData : {
+        latitude : 43,
+        longitude : -80
+      },
+    }
+
+    function changeMarkerLocation(lat, lon){
+      state.markerData.latitude = lat
+      state.markerData.latitude = lon
+      };
+  
 
   // @brief Returns the view of Map Screen
   return (
@@ -43,7 +56,12 @@ const MapScreen = props => {
             description={'jk its rona szn'}
           />
           
+          <MapView.Marker
+            coordinate = {state.markerData}
+          />
           
+          
+
           <MapViewDirections 
           origin={{latitude: 43.2600052,longitude: -79.9277422}}
           destination={{latitude: 42.2600052,longitude: -78.9277422}}
