@@ -13,6 +13,7 @@ const instructions = Platform.select({
 // @brief Defines the Map Display Screen
 const MapScreen = props => {
 
+
   // @brief Returns the view of Map Screen
   return (
     <View>
@@ -41,6 +42,7 @@ const MapScreen = props => {
             title={'Michelles feet'}
             description={'jk its rona szn'}
           />
+          
           
           <MapViewDirections 
           origin={{latitude: 43.2600052,longitude: -79.9277422}}
