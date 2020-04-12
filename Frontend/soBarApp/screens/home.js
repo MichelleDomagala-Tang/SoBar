@@ -1,33 +1,22 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, Button } from 'react-native';
 import { globalStyles } from '../styles/global';
+import BarsHTTP from '../backend_retrieval/http_bars.js';
 
 import Preferences from '../screens/preferences'
-import PrefItem from '../components/PrefItem'
 
+
+// @brief Defines the Home Screen
 const HomeScreen = props => {
 
-    //const [pref, setpref] = useState([]);
-    //const [bars, setBars] = useState([]);
     const [modalVisible, setModalVisible] = useState(false);
 
-    const addPrefHandler = () => {
-        //setpref(currentPref => 
-            //[...pref,
-            //{ id: Math.random().toString(), value: prefTitle }]);
-        setModalVisible(false);
-    };
-
-    //const removePrefHandler = prefId => {
-       // setpref(currentPref => {
-        //    return currentPref.filter((pref) => pref.id !== prefId)
-        //});
-   // };
-
+    // @brief Method sets modal display to false
     const cancelPrefHandler = () => {
         setModalVisible(false);
     };
 
+    // @brief Returns view for Home Screen
     return (
         <View>
             <View style={globalStyles.buttonContainer} >
@@ -35,11 +24,12 @@ const HomeScreen = props => {
                 <View style={globalStyles.button}><Button title="Find Route" onPress={() => props.onStart(true)} color='grey' /></View>
             </View>
             <Preferences visible={modalVisible}
-                onAddPref={addPrefHandler}
+                onAddPref={cancelPrefHandler}
                 onCancel={cancelPrefHandler} />
             <Text style={globalStyles.titleText} >Bars in the Area:</Text>
+        <BarsHTTP />
             <ScrollView>
-                <View style={globalStyles.inputContainer}>
+                <View>
                     <Text>This is where the bars and button options are displayed</Text>
                 </View>
             </ScrollView>

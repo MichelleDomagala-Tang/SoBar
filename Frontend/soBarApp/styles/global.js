@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native';
 
+
+// @brief Defines global styles to be used in applications
 export const globalStyles = StyleSheet.create({
     header: {
         width: '100%',
@@ -51,18 +53,15 @@ export const globalStyles = StyleSheet.create({
     inputContainer: {
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center',
-        flex: 1,
-        paddingTop: 60
+        alignItems: 'flex-start',
+        paddingTop: 60,
+        paddingLeft: 150,
     },
     screen: {
         flex: 1
     },
     checkboxContainer: {
         flexDirection: "row",
-        marginBottom: 20,
-      },
-    addButton: {
-        width: 40
+        marginBottom: 20
     }
 });
