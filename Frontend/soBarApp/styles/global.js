@@ -71,9 +71,17 @@ export const globalStyles = StyleSheet.create({
         flexDirection: "row",
         marginBottom: 20
     },
+    item: {
+        backgroundColor: '#f9c2ff',
+        padding: 10,
+        marginVertical: 4,
+        marginHorizontal: 8,
+        width: '90%'
+    },
     bar: {
-        //backgroundColor: 'orange',
-        //alignSelf: 'flex-start',
-        width: '95%',
+        fontSize: 13
+    },
+    subInfo: {
+        fontSize: 11
     }
 });
