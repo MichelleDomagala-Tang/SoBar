@@ -7,8 +7,10 @@ It will generate the output.txt file which will contain the sample information t
 !IMPORTANT!
 This is a gradle project so you must import the project as a "gradle project" in eclipse in order to compile it!
 
-A display of the front-end application can be seen by downloading the "Expo" application on any Andriod Device.
+A display of the front-end application can be seen by downloading "Expo" from the Google Play Store on any Andriod Device.
+
 In the Expo application, scan the QR given at: https://expo.io/@willee/sobar
+
 
 Please email one of us if there are difficulties.
 
