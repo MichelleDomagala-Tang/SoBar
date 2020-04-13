@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import { View, Text } from 'react-native'
 import BarsDisplay from '../screens/barDisplay';
 
+
+// @brief Makes http request to get bar info from backend and store it in 
 class BarsHTTP extends Component {
+
 state = {
    data: []
 }
