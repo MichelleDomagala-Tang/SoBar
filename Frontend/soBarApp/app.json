@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "soBarApp",
-    "slug": "soBarApp",
+    "name": "soBar",
+    "slug": "sobar",
     "platforms": [
       "ios",
       "android",
@@ -23,6 +23,7 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "This is a bar hopping app made for Software Eng 2XB3"
   }
 }
